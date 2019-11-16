@@ -27,8 +27,8 @@ class ViewController: UIViewController {
         layout.minimumLineSpacing = padding
         layout.minimumInteritemSpacing = padding
         
-        let math = Session(name: "Math 1920", date: Date(), time: Date(), description: "Prelim 2", image: "math")
-        let history = Session(name: "Hist 2210", date: Date(), time: Date(), description: "Prelim 2", image: "history")
+        let math = Session(name: "Math 1920", date: Date(), time: Date(), description: "I am looking for a partner to study with for prelim 2. I have a decent grade in the class, and I have a flexible schedule.", image: "math")
+        let history = Session(name: "Hist 2210", date: Date(), time: Date(), description: "I am looking for a partner to study with for prelim 1. I am especially interested in anyone who can help me with the French Revolution.", image: "history")
         sessions = [math, history]
         
         
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         // getSessions()
 
     }
-    
+
     func setUpConstraints() {
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
@@ -56,9 +56,13 @@ class ViewController: UIViewController {
     }
     
     func getSessions() {
-        NetworkManager.getSessions()
+        NetworkManager.getSessions { sessions in
+            self.sessions = sessions
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+        }
     }
-    
+    }
     
 
 
@@ -82,5 +86,11 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = (collectionView.frame.width - padding) / 2
         return CGSize(width: size, height: size)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let session = sessions[indexPath.row]
+        let viewController = CellViewController(session: session)
+        navigationController?.pushViewController(viewController, animated: true)
+        
     }
 }
