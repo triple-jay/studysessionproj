@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SessionInfoDelegate: class {
+    func sessionInfoDelegate()
+}
+
 class ViewController: UIViewController {
     
     var collectionView: UICollectionView!
@@ -29,6 +33,7 @@ class ViewController: UIViewController {
         
         let math = Session(name: "Math 1920", date: Date(), time: Date(), description: "I am looking for a partner to study with for prelim 2. I have a decent grade in the class, and I have a flexible schedule.", image: "math")
         let history = Session(name: "Hist 2210", date: Date(), time: Date(), description: "I am looking for a partner to study with for prelim 1. I am especially interested in anyone who can help me with the French Revolution.", image: "history")
+        
         sessions = [math, history]
         
         
@@ -68,6 +73,15 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let newView = SessionInfoViewController(sessionObject: sessions[indexPath.row])
+        newView.delegate = self
+        let modalNavigationVC = UINavigationController(rootViewController: newView)
+        navigationController?.present(modalNavigationVC, animated: true, completion: nil)
+    }
+}
+
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sessions.count
@@ -87,10 +101,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         let size = (collectionView.frame.width - padding) / 2
         return CGSize(width: size, height: size)
     }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let session = sessions[indexPath.row]
-        let viewController = CellViewController(session: session)
-        navigationController?.pushViewController(viewController, animated: true)
-        
+}
+
+extension ViewController: SessionInfoDelegate{
+    func sessionInfoDelegate() {
+        collectionView.reloadData()
     }
 }
