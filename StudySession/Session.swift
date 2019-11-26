@@ -20,7 +20,7 @@ struct Session: Codable {
 }
 
 struct SessionDataResponse: Codable {
-    var study_groups: [Session]
+    var sessions: [Session]
 }
 
 struct SessionResponse: Codable {

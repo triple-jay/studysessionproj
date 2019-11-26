@@ -18,7 +18,8 @@ class NetworkManager {
             case.success(let data):
                 let jsonDecoder = JSONDecoder()
                 if let sessionResponse = try? jsonDecoder.decode(SessionResponse.self, from: data){
-                    let sessions = sessionResponse.data.study_groups
+                    print("data uploaded")
+                    let sessions = sessionResponse.data.sessions
                     completion(sessions)
                 } else{
                     print("Invalid Data")
@@ -44,8 +45,8 @@ class NetworkManager {
             case.success(let data):
                 let jsonDecoder = JSONDecoder()
                 if let sessionResponse = try? jsonDecoder.decode(SessionResponse.self, from: data){
-                    let sessions = sessionResponse.data.study_groups
-//                    return(sessions, nil)
+                    let sessions = sessionResponse.data.sessions
+                    debugPrint(sessions)
                 } else{
                     print("Invalid Data")
                 }
