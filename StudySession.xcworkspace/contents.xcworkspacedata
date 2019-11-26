@@ -5,6 +5,9 @@
       location = "group:StudySession.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:StudySession">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

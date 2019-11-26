@@ -19,6 +19,11 @@
 		28904B1B238064FF00588F06 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28904B1A238064FF00588F06 /* RootViewController.swift */; };
 		28904B1D23806E5E00588F06 /* CellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28904B1C23806E5E00588F06 /* CellViewController.swift */; };
 		28904B1F238093C400588F06 /* SessionInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28904B1E238093C400588F06 /* SessionInfoViewController.swift */; };
+		28F6991B2389AF8E00F5FE8A /* SelectPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F6991A2389AF8E00F5FE8A /* SelectPictureViewController.swift */; };
+		28F6991D2389AFF000F5FE8A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F6991C2389AFF000F5FE8A /* ImageCollectionViewCell.swift */; };
+		28F6991F2389B14C00F5FE8A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F6991E2389B14C00F5FE8A /* Image.swift */; };
+		841A3BA92381F40E00EDDC95 /* SetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A3BA82381F40E00EDDC95 /* SetLocation.swift */; };
+		84DBCE202380D94E000525F8 /* MySessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DBCE1F2380D94E000525F8 /* MySessionViewController.swift */; };
 		B9A86CE1D68EFD7C2CB691A0 /* Pods_StudySession.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D0CC242B8A03132802A4B2 /* Pods_StudySession.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +43,12 @@
 		28904B1A238064FF00588F06 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		28904B1C23806E5E00588F06 /* CellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewController.swift; sourceTree = "<group>"; };
 		28904B1E238093C400588F06 /* SessionInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInfoViewController.swift; sourceTree = "<group>"; };
+		28F6991A2389AF8E00F5FE8A /* SelectPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPictureViewController.swift; sourceTree = "<group>"; };
+		28F6991C2389AFF000F5FE8A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		28F6991E2389B14C00F5FE8A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		78DB6414694346DFF48FD6F7 /* Pods-StudySession.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudySession.release.xcconfig"; path = "Target Support Files/Pods-StudySession/Pods-StudySession.release.xcconfig"; sourceTree = "<group>"; };
+		841A3BA82381F40E00EDDC95 /* SetLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLocation.swift; sourceTree = "<group>"; };
+		84DBCE1F2380D94E000525F8 /* MySessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionViewController.swift; sourceTree = "<group>"; };
 		B97B0F0CC1AFB2179239D292 /* Pods-StudySession.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudySession.debug.xcconfig"; path = "Target Support Files/Pods-StudySession/Pods-StudySession.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,11 +96,16 @@
 				28904AFC237E23D900588F06 /* AppDelegate.swift */,
 				28904B1A238064FF00588F06 /* RootViewController.swift */,
 				28904B14237E2C0F00588F06 /* SessionCollectionViewCell.swift */,
+				28F6991C2389AFF000F5FE8A /* ImageCollectionViewCell.swift */,
+				28F6991E2389B14C00F5FE8A /* Image.swift */,
 				28904B10237E29B800588F06 /* Session.swift */,
 				28904B00237E23D900588F06 /* ViewController.swift */,
+				84DBCE1F2380D94E000525F8 /* MySessionViewController.swift */,
 				28904B1C23806E5E00588F06 /* CellViewController.swift */,
+				841A3BA82381F40E00EDDC95 /* SetLocation.swift */,
 				28904B1E238093C400588F06 /* SessionInfoViewController.swift */,
 				28904B18238061B400588F06 /* InputViewController.swift */,
+				28F6991A2389AF8E00F5FE8A /* SelectPictureViewController.swift */,
 				28904B16237E412400588F06 /* NetworkManager.swift */,
 				28904B02237E23D900588F06 /* Main.storyboard */,
 				28904B05237E23DA00588F06 /* Assets.xcassets */,
@@ -225,13 +240,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				28904B1F238093C400588F06 /* SessionInfoViewController.swift in Sources */,
+				84DBCE202380D94E000525F8 /* MySessionViewController.swift in Sources */,
+				28F6991D2389AFF000F5FE8A /* ImageCollectionViewCell.swift in Sources */,
 				28904B01237E23D900588F06 /* ViewController.swift in Sources */,
 				28904B15237E2C0F00588F06 /* SessionCollectionViewCell.swift in Sources */,
 				28904B1D23806E5E00588F06 /* CellViewController.swift in Sources */,
 				28904B17237E412400588F06 /* NetworkManager.swift in Sources */,
+				28F6991F2389B14C00F5FE8A /* Image.swift in Sources */,
 				28904B1B238064FF00588F06 /* RootViewController.swift in Sources */,
 				28904B19238061B400588F06 /* InputViewController.swift in Sources */,
 				28904AFD237E23D900588F06 /* AppDelegate.swift in Sources */,
+				28F6991B2389AF8E00F5FE8A /* SelectPictureViewController.swift in Sources */,
+				841A3BA92381F40E00EDDC95 /* SetLocation.swift in Sources */,
 				28904B11237E29B800588F06 /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

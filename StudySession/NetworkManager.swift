@@ -45,7 +45,7 @@ class NetworkManager {
                 let jsonDecoder = JSONDecoder()
                 if let sessionResponse = try? jsonDecoder.decode(SessionResponse.self, from: data){
                     let sessions = sessionResponse.data.study_groups
-                    return(sessions, nil)
+//                    return(sessions, nil)
                 } else{
                     print("Invalid Data")
                 }
