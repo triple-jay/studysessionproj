@@ -24,8 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         title = "Study Sessions"
-        view.backgroundColor = .systemGray5
-        
+        view.backgroundColor = .systemGray5        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = padding
