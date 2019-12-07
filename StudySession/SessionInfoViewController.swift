@@ -90,7 +90,7 @@ class SessionInfoViewController: UIViewController {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         // set initial location to Duffield Hall
         let initial = CLLocation(latitude: 42.4449, longitude: -76.4830)
-        let initialLocation = SetLocation(title: "Duff", locationName: "Duff", discipline: "Hall", coordinate: CLLocationCoordinate2D(latitude: 42.4449, longitude: -76.4830))
+        let initialLocation = SetLocation(title: "Duffield", locationName: "Duffield", discipline: "Hall", coordinate: CLLocationCoordinate2D(latitude: 42.4449, longitude: -76.4830))
         mapView.addAnnotation(initialLocation)
         view.addSubview(mapView)
         
@@ -168,7 +168,7 @@ class SessionInfoViewController: UIViewController {
             print(favorites)
                        if let encodedFavorites = try? encoder.encode(favorites) {
                            userDefaults.set(encodedFavorites, forKey: Strings.favorites)
-                        dismiss(animated: true, completion: nil)
+                            dismiss(animated: true, completion: nil)
             }} else {
                         let favorites = [sessionObject]
                         print(favorites)

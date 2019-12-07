@@ -8,7 +8,9 @@
 
 import UIKit
 
-
+protocol FavSessionInfoDelegate: class {
+    func favsessionInfoDelegate()
+}
 
 class MySessionViewController: UIViewController {
     
@@ -93,4 +95,18 @@ extension MySessionViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension MySessionViewController: FavSessionInfoDelegate {
+    func favsessionInfoDelegate() {
+        collectionView.reloadData()
+    }
+}
+
+extension MySessionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let favnewView = FavSessionInfoViewController(sessionObject: favorites[indexPath.row])
+        favnewView.favdelegate = self
+        let modalNavigationVC = UINavigationController(rootViewController: favnewView)
+        navigationController?.present(modalNavigationVC, animated: true, completion: nil)
+    }
+}
 
