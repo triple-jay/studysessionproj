@@ -168,6 +168,7 @@ class SessionInfoViewController: UIViewController {
             print(favorites)
                        if let encodedFavorites = try? encoder.encode(favorites) {
                            userDefaults.set(encodedFavorites, forKey: Strings.favorites)
+                        dismiss(animated: true, completion: nil)
             }} else {
                         let favorites = [sessionObject]
                         print(favorites)
@@ -175,7 +176,6 @@ class SessionInfoViewController: UIViewController {
                             userDefaults.set(encodedFavorites, forKey: Strings.favorites)
                 }
         
-    
             }
         }
     }
