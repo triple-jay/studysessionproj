@@ -27,10 +27,10 @@ class SessionInfoViewController: UIViewController {
     
     init(sessionObject: Session) {
         self.sessionObject = sessionObject
-        
+
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -162,7 +162,24 @@ class SessionInfoViewController: UIViewController {
    }
 
     @objc func addToMySessions(){
-        print("add")
+        if let storedFavorites = userDefaults.data(forKey: Strings.favorites),
+            var favorites = try? decoder.decode([Session].self, from: storedFavorites) {
+                       favorites.append(sessionObject)
+            print(favorites)
+                       if let encodedFavorites = try? encoder.encode(favorites) {
+                           userDefaults.set(encodedFavorites, forKey: Strings.favorites)
+            }} else {
+                        let favorites = [sessionObject]
+                        print(favorites)
+                        if let encodedFavorites = try? encoder.encode(favorites) {
+                            userDefaults.set(encodedFavorites, forKey: Strings.favorites)
+                }
+        
+    
+            }
+        }
     }
     
-}
+
+
+

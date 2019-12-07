@@ -40,12 +40,6 @@ class ViewController: UIViewController {
         let dateString = dateFormat.string(from: date)
 
         
-//        let math = Session(name: "Math 1920", date: dateString, time: timeString, description: "I am looking for a partner to study with for prelim 2. I have a decent grade in the class, and I have a flexible schedule.", duration: 2, image: "comsci", location: "Bailey")
-//        let history = Session(name: "Hist 2210", date: dateString, time: timeString, description: "I am looking for a partner to study with for prelim 1. I am especially interested in anyone who can help me with the French Revolution.", duration:2, image: "history", location: "Philips")
-//        let history2 = Session(name: "Hist 2210", date: dateString, time: timeString, description: "I am looking for a partner to study with for prelim 1. I am especially interested in anyone who can help me with the French Revolution.", duration: 4, image: "history", location: "Philips")
-//        sessions = [math, history, history2]
-
-        
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .systemGray5
@@ -79,8 +73,11 @@ class ViewController: UIViewController {
         }
     }
     }
-
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        getSessions()
+    }
 
 }
 

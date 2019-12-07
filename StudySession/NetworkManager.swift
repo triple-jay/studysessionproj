@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-let endpoint = "http://35.196.63.243/api/study_groups" // Filler for JSON
+let endpoint = "http://35.196.63.243/api/study_groups/"
 
 class NetworkManager {
     static func getSessions(completion: @escaping ([Session]) -> Void) {
@@ -47,7 +47,7 @@ class NetworkManager {
                 if let sessionResponse = try? jsonDecoder.decode(SessionResponse.self, from: data){
                     let sessions = sessionResponse.data.sessions
                     debugPrint(sessions)
-                } else{
+                } else {
                     print("Invalid Data")
                 }
                 

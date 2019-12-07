@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		284E33E6239C16A300C7D2CB /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284E33E5239C16A300C7D2CB /* Strings.swift */; };
 		28904AFD237E23D900588F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28904AFC237E23D900588F06 /* AppDelegate.swift */; };
 		28904B01237E23D900588F06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28904B00237E23D900588F06 /* ViewController.swift */; };
 		28904B04237E23D900588F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28904B02237E23D900588F06 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		17D0CC242B8A03132802A4B2 /* Pods_StudySession.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudySession.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		284E33E5239C16A300C7D2CB /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		28904AF9237E23D800588F06 /* StudySession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudySession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28904AFC237E23D900588F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28904B00237E23D900588F06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				28904B14237E2C0F00588F06 /* SessionCollectionViewCell.swift */,
 				28F6991C2389AFF000F5FE8A /* ImageCollectionViewCell.swift */,
 				28F6991E2389B14C00F5FE8A /* Image.swift */,
+				284E33E5239C16A300C7D2CB /* Strings.swift */,
 				28904B10237E29B800588F06 /* Session.swift */,
 				28904B00237E23D900588F06 /* ViewController.swift */,
 				84DBCE1F2380D94E000525F8 /* MySessionViewController.swift */,
@@ -246,6 +249,7 @@
 				28904B15237E2C0F00588F06 /* SessionCollectionViewCell.swift in Sources */,
 				28904B1D23806E5E00588F06 /* CellViewController.swift in Sources */,
 				28904B17237E412400588F06 /* NetworkManager.swift in Sources */,
+				284E33E6239C16A300C7D2CB /* Strings.swift in Sources */,
 				28F6991F2389B14C00F5FE8A /* Image.swift in Sources */,
 				28904B1B238064FF00588F06 /* RootViewController.swift in Sources */,
 				28904B19238061B400588F06 /* InputViewController.swift in Sources */,

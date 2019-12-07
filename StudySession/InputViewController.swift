@@ -28,6 +28,7 @@ class InputViewController: UIViewController {
     var durationField: UITextField!
     var durationScrollValue: [String] = []
     var bar: UIToolbar!
+    var durationValue: Int = 0
     
 //    location picker, pickPhoto(included) or Other(pickfromphotos/upload)
 
@@ -112,7 +113,7 @@ class InputViewController: UIViewController {
         
         durationScroll = UIPickerView()
         durationField = UITextField()
-        durationScrollValue = ["0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5", "8", "8.5"]
+        durationScrollValue = ["1","2","3","4","5","6","7","8"]
         durationScroll.delegate = durationScrollDelegate
         durationField.inputView = durationScroll
         durationScroll.delegate = self
@@ -200,7 +201,7 @@ class InputViewController: UIViewController {
         let timeFormat = DateFormatter()
         timeFormat.dateFormat = "h:mm a"
         let time = timeFormat.string(from: dateField.date)
-        let object = Session(name: titleField.text ?? "No name", date: date, time: time, description: descriptionField.text ?? "No description", duration: 2, image: imageString ?? "history", location: locationField.text ?? "No location")
+        let object = Session(name: titleField.text ?? "No name", date: date, time: time, description: descriptionField.text ?? "No description", duration: durationValue, image: imageString ?? "history", location: locationField.text ?? "No location")
         print(object)
        NetworkManager.postSessions(object: object)
     }
@@ -242,6 +243,7 @@ extension InputViewController: UIPickerViewDelegate {
         return durationScrollValue[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        durationValue = Int(durationScrollValue[row]) ?? 0
         durationField.text = "\(durationScrollValue[row]) hours"
     }
 }

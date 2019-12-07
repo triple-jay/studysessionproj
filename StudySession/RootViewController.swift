@@ -24,7 +24,7 @@ class RootViewController: UITabBarController {
         
         let mySessionViewController = MySessionViewController()
         
-        mySessionViewController.tabBarItem = UITabBarItem(title: "My Sessions", image: UIImage(named: "star"), selectedImage: UIImage(named: "star"))
+        mySessionViewController.tabBarItem = UITabBarItem(title: "My Study Sessions", image: UIImage(named: "star"), selectedImage: UIImage(named: "star"))
         
         let viewControllerList = [viewController, mySessionViewController, inputViewController]
         
@@ -34,6 +34,7 @@ class RootViewController: UITabBarController {
 //           add my study session tab (bookmark)
         }
     }
+    
     
 
     /*

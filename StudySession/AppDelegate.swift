@@ -8,6 +8,11 @@
 
 import UIKit
 
+let userDefaults = UserDefaults.standard
+
+let encoder = JSONEncoder()
+let decoder = JSONDecoder()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -18,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
+        
+//        userDefaults.register(defaults: [
+//            Strings.favorites: [Data]()
+//        ])
         
         return true
     }
