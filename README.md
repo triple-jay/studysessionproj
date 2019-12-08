@@ -46,10 +46,10 @@ Backend Routes
     - Deletes a partner posting
 
 ## iOS Requirements Met
-Used NSLayoutConstraint 
-Many UICollectionViews
-Used both UINavigationController and UITabBarController 
-APIs Used: Integration with Backend API using Alamofire, MapKit
+- Used NSLayoutConstraint 
+- Many UICollectionViews
+- Used both UINavigationController and UITabBarController 
+- APIs Used: Integration with Backend API using Alamofire, MapKit
 
 ## iOS Features
 - Three Tabs: 
