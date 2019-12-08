@@ -8,6 +8,7 @@ target 'StudySession' do
   # Pods for StudySession
    pod 'Alamofire'
    pod 'SnapKit'
+   pod 'GoogleSignIn'
 #   pod googlemap, googlesignin
 #mapkit
 end

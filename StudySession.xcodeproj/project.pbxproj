@@ -23,7 +23,9 @@
 		28F6991B2389AF8E00F5FE8A /* SelectPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F6991A2389AF8E00F5FE8A /* SelectPictureViewController.swift */; };
 		28F6991D2389AFF000F5FE8A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F6991C2389AFF000F5FE8A /* ImageCollectionViewCell.swift */; };
 		28F6991F2389B14C00F5FE8A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F6991E2389B14C00F5FE8A /* Image.swift */; };
+		840BEB7E239D8FDA00F34104 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840BEB7D239D8FDA00F34104 /* SignInViewController.swift */; };
 		841A3BA92381F40E00EDDC95 /* SetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A3BA82381F40E00EDDC95 /* SetLocation.swift */; };
+		8423C696239DA1A5009A81F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8423C695239DA1A4009A81F7 /* GoogleService-Info.plist */; };
 		845F1CAD239C48C200ED31CB /* FavSessionInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F1CAC239C48C200ED31CB /* FavSessionInfoViewController.swift */; };
 		84DBCE202380D94E000525F8 /* MySessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DBCE1F2380D94E000525F8 /* MySessionViewController.swift */; };
 		B9A86CE1D68EFD7C2CB691A0 /* Pods_StudySession.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D0CC242B8A03132802A4B2 /* Pods_StudySession.framework */; };
@@ -50,7 +52,9 @@
 		28F6991C2389AFF000F5FE8A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		28F6991E2389B14C00F5FE8A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		78DB6414694346DFF48FD6F7 /* Pods-StudySession.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudySession.release.xcconfig"; path = "Target Support Files/Pods-StudySession/Pods-StudySession.release.xcconfig"; sourceTree = "<group>"; };
+		840BEB7D239D8FDA00F34104 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		841A3BA82381F40E00EDDC95 /* SetLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLocation.swift; sourceTree = "<group>"; };
+		8423C695239DA1A4009A81F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		845F1CAC239C48C200ED31CB /* FavSessionInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavSessionInfoViewController.swift; sourceTree = "<group>"; };
 		84DBCE1F2380D94E000525F8 /* MySessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySessionViewController.swift; sourceTree = "<group>"; };
 		B97B0F0CC1AFB2179239D292 /* Pods-StudySession.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudySession.debug.xcconfig"; path = "Target Support Files/Pods-StudySession/Pods-StudySession.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 				284E33E5239C16A300C7D2CB /* Strings.swift */,
 				28904B10237E29B800588F06 /* Session.swift */,
 				28904B00237E23D900588F06 /* ViewController.swift */,
+				840BEB7D239D8FDA00F34104 /* SignInViewController.swift */,
 				84DBCE1F2380D94E000525F8 /* MySessionViewController.swift */,
 				28904B1C23806E5E00588F06 /* CellViewController.swift */,
 				841A3BA82381F40E00EDDC95 /* SetLocation.swift */,
@@ -116,6 +121,7 @@
 				28904B02237E23D900588F06 /* Main.storyboard */,
 				28904B05237E23DA00588F06 /* Assets.xcassets */,
 				28904B07237E23DA00588F06 /* LaunchScreen.storyboard */,
+				8423C695239DA1A4009A81F7 /* GoogleService-Info.plist */,
 				28904B0A237E23DA00588F06 /* Info.plist */,
 			);
 			path = StudySession;
@@ -142,6 +148,7 @@
 				28904AF6237E23D800588F06 /* Frameworks */,
 				28904AF7237E23D800588F06 /* Resources */,
 				18DA251E8B3B39791E9B987D /* [CP] Embed Pods Frameworks */,
+				04E31D701436BD6275E7B744 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28904B09237E23DA00588F06 /* LaunchScreen.storyboard in Resources */,
+				8423C696239DA1A5009A81F7 /* GoogleService-Info.plist in Resources */,
 				28904B06237E23DA00588F06 /* Assets.xcassets in Resources */,
 				28904B04237E23D900588F06 /* Main.storyboard in Resources */,
 			);
@@ -199,6 +207,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04E31D701436BD6275E7B744 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudySession/Pods-StudySession-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudySession/Pods-StudySession-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StudySession/Pods-StudySession-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		18DA251E8B3B39791E9B987D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +277,7 @@
 				28904B15237E2C0F00588F06 /* SessionCollectionViewCell.swift in Sources */,
 				28904B1D23806E5E00588F06 /* CellViewController.swift in Sources */,
 				28904B17237E412400588F06 /* NetworkManager.swift in Sources */,
+				840BEB7E239D8FDA00F34104 /* SignInViewController.swift in Sources */,
 				284E33E6239C16A300C7D2CB /* Strings.swift in Sources */,
 				28F6991F2389B14C00F5FE8A /* Image.swift in Sources */,
 				28904B1B238064FF00588F06 /* RootViewController.swift in Sources */,
@@ -411,7 +437,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Jeremy-Jung.StudySession";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jeremy-Christy.StudySession";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -429,7 +455,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Jeremy-Jung.StudySession";
+				PRODUCT_BUNDLE_IDENTIFIER = "Jeremy-Christy.StudySession";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

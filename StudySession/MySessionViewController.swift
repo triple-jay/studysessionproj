@@ -3,7 +3,7 @@
 //  StudySession
 //
 //  Created by Christy Song on 11/16/19.
-//  Copyright © 2019 Jeremy Jung. All rights reserved.
+//  Copyright © 2019 Christy Song. All rights reserved.
 //
 
 import UIKit

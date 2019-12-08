@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 protocol SessionInfoDelegate: class {
     func sessionInfoDelegate()
@@ -16,6 +17,7 @@ class ViewController: UIViewController {
     
     var collectionView: UICollectionView!
     var sessions: [Session] = []
+    var signoutbutton: UIBarButtonItem!
     
     let studyReuseIdentifier: String = "studyReuseIdentifier"
     let padding: CGFloat = 15
@@ -49,6 +51,8 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        signoutbutton = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOut))
+        navigationItem.rightBarButtonItem = signoutbutton
         
         setUpConstraints()
          getSessions()
@@ -71,6 +75,13 @@ class ViewController: UIViewController {
                 self.collectionView.reloadData()
         }
     }
+    }
+    
+    @objc func signOut(_ sender: AnyObject) {
+        GIDSignIn.sharedInstance().signOut()
+//        UIApplication.sharedApplication.window.rootViewController = SignInViewController()
+        let signInVC = SignInViewController()
+        navigationController?.pushViewController(signInVC, animated: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
