@@ -27,17 +27,17 @@ class SessionInfoViewController: UIViewController {
     
     init(sessionObject: Session) {
         self.sessionObject = sessionObject
-
+        
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "\(sessionObject.name)"
         view.backgroundColor = .white
         
@@ -107,7 +107,7 @@ class SessionInfoViewController: UIViewController {
     func setupConstraints(){
         NSLayoutConstraint.activate([
             photoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-//            photoImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            //            photoImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             photoImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             photoImage.widthAnchor.constraint(equalToConstant: 450),
             photoImage.heightAnchor.constraint(equalToConstant: 250)
@@ -146,40 +146,44 @@ class SessionInfoViewController: UIViewController {
             mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
         
-//        NSLayoutConstraint.activate([
-//            addToMySessionButton.topAnchor
-//        ])
+        //        NSLayoutConstraint.activate([
+        //            addToMySessionButton.topAnchor
+        //        ])
     }
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-      mapView.setRegion(coordinateRegion, animated: true)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
-
-   @objc func back(){
-       dismiss(animated: true, completion: nil)
-   }
-
+    
+    @objc func back(){
+        dismiss(animated: true, completion: nil)
+    }
+    
     @objc func addToMySessions(){
         if let storedFavorites = userDefaults.data(forKey: Strings.favorites),
             var favorites = try? decoder.decode([Session].self, from: storedFavorites) {
-                       favorites.append(sessionObject)
-            print(favorites)
-                       if let encodedFavorites = try? encoder.encode(favorites) {
-                           userDefaults.set(encodedFavorites, forKey: Strings.favorites)
-                            dismiss(animated: true, completion: nil)
-            }} else {
-                        let favorites = [sessionObject]
-                        print(favorites)
-                        if let encodedFavorites = try? encoder.encode(favorites) {
-                            userDefaults.set(encodedFavorites, forKey: Strings.favorites)
-                }
-        
+            if !favorites.contains(where: { $0 == sessionObject}) {
+                favorites.append(sessionObject)
             }
+            print(favorites)
+            if let encodedFavorites = try? encoder.encode(favorites) {
+                userDefaults.set(encodedFavorites, forKey: Strings.favorites)
+                dismiss(animated: true, completion: nil)
+            }
+            
+        } else {
+            let favorites = [sessionObject]
+            print(favorites)
+            if let encodedFavorites = try? encoder.encode(favorites) {
+                userDefaults.set(encodedFavorites, forKey: Strings.favorites)
+            }
+            
         }
     }
-    
+}
+
 
 
 

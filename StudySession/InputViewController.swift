@@ -30,6 +30,8 @@ class InputViewController: UIViewController {
     var bar: UIToolbar!
     var durationValue: Int = 0
     
+    var sessions: [Session]!
+    
 //    location picker, pickPhoto(included) or Other(pickfromphotos/upload)
 
     override func viewDidLoad() {
@@ -203,13 +205,22 @@ class InputViewController: UIViewController {
         let time = timeFormat.string(from: dateField.date)
         let object = Session(name: titleField.text ?? "No name", date: date, time: time, description: descriptionField.text ?? "No description", duration: durationValue, image: imageString ?? "history", location: locationField.text ?? "No location")
         print(object)
-       NetworkManager.postSessions(object: object)
+        checkDuplicateSessions(object: object)
+//       NetworkManager.postSessions(object: object)
     }
     
     @objc func chooseImage() {
         let viewController = SelectPictureViewController()
         viewController.delegate = self
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func checkDuplicateSessions(object: Session) {
+        NetworkManager.getSessions { sessions in
+            self.sessions = sessions
+            if !sessions.contains(where: { $0 == object}) {
+                NetworkManager.postSessions(object: object)
+            }}
     }
     
    

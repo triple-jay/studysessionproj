@@ -18,6 +18,12 @@ struct Session: Codable {
     var location: String
 //    var like: Bool  = false
 }
+extension Session: Equatable {
+    static func ==(lhs: Session, rhs: Session) -> Bool {
+        return lhs.name == rhs.name && lhs.date == rhs.date && lhs.time == rhs.time && lhs.description == rhs.description && lhs.duration == rhs.duration && lhs.image == rhs.image && lhs.location == rhs.location
+    }
+}
+
 
 struct SessionDataResponse: Codable {
     var sessions: [Session]
