@@ -20,6 +20,7 @@ class SessionInfoViewController: UIViewController {
     var backButton: UIBarButtonItem!
     var addToMySessionButton: UIBarButtonItem!
     var mapView: MKMapView!
+    var duration: UILabel!
     
     var sessionObject: Session!
     
@@ -69,6 +70,16 @@ class SessionInfoViewController: UIViewController {
         time.font = UIFont.systemFont(ofSize: 16)
         time.textColor = .black
         view.addSubview(time)
+        
+        duration = UILabel()
+        duration.translatesAutoresizingMaskIntoConstraints = false
+        duration.text = "Duration: \(sessionObject.duration) hours"
+        if "\(sessionObject.duration)" == "1" {
+            duration.text = "Duration: \(sessionObject.duration) hour"
+        }
+        duration.font = UIFont.systemFont(ofSize: 16)
+        duration.textColor = .black
+        view.addSubview(duration)
         
         location = UILabel()
         location.translatesAutoresizingMaskIntoConstraints = false
@@ -128,7 +139,13 @@ class SessionInfoViewController: UIViewController {
             time.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
         NSLayoutConstraint.activate([
-            descriptionField.topAnchor.constraint(equalTo: time.bottomAnchor, constant: 10),
+            duration.topAnchor.constraint(equalTo: time.bottomAnchor, constant: 10),
+            duration.leadingAnchor.constraint(equalTo: date.leadingAnchor),
+            duration.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            descriptionField.topAnchor.constraint(equalTo: duration.bottomAnchor, constant: 10),
             descriptionField.leadingAnchor.constraint(equalTo: date.leadingAnchor),
             descriptionField.widthAnchor.constraint(equalToConstant: 360),
             descriptionField.heightAnchor.constraint(equalToConstant: 130),
