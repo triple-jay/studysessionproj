@@ -18,6 +18,7 @@ class FavSessionInfoViewController: UIViewController {
         var location: UILabel! //googlemap
         var descriptionField: UITextView!
         var backButton: UIBarButtonItem!
+        var deleteButton: UIBarButtonItem!
         var mapView: MKMapView!
         
         var sessionObject: Session!
@@ -96,6 +97,9 @@ class FavSessionInfoViewController: UIViewController {
             backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(back))
             navigationItem.leftBarButtonItem = backButton
             
+            deleteButton = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(deleteFromSessions))
+            navigationItem.rightBarButtonItem = deleteButton
+            
             
             setupConstraints()
             centerMapOnLocation(location: initial)
@@ -157,8 +161,25 @@ class FavSessionInfoViewController: UIViewController {
        @objc func back(){
            dismiss(animated: true, completion: nil)
        }
-
+    @objc func deleteFromSessions(){
+        if let storedFavorites = userDefaults.data(forKey: Strings.favorites),
+            var favorites = try? decoder.decode([Session].self, from: storedFavorites) {
+            if favorites.contains(where: { $0 == sessionObject}) {
+                if let index = favorites.firstIndex(of: sessionObject) {
+                    favorites.remove(at: index)
+                }
+                
+            }
+            print(favorites)
+            if let encodedFavorites = try? encoder.encode(favorites) {
+                userDefaults.set(encodedFavorites, forKey: Strings.favorites)
+                dismiss(animated: true, completion: nil)
+            }
+            
         }
+    }
+    }
+
         
 
 
