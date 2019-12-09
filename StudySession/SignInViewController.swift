@@ -17,7 +17,7 @@ class SignInViewController: UIViewController {
         
         super.viewDidLoad()
         title = "Sign In"
-        view.backgroundColor = .white
+        view.backgroundColor = .cyan
         
         signInButton=GIDSignInButton()
         signInButton.translatesAutoresizingMaskIntoConstraints = false
