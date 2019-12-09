@@ -266,5 +266,8 @@ extension InputViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         durationValue = Int(durationScrollValue[row]) ?? 0
         durationField.text = "\(durationScrollValue[row]) hours"
+        if "\(durationScrollValue[row])" == "1"{
+            durationField.text = "\(durationScrollValue[row]) hour"
+        }
     }
 }
