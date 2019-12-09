@@ -89,6 +89,10 @@ class InputViewController: UIViewController {
         
         dateField = UIDatePicker()
         dateField.translatesAutoresizingMaskIntoConstraints = false
+//        var mindatecompo = DateComponents()
+//        mindatecompo.calendar = Calendar(identifier: .gregorian)
+//        mindatecompo.year =
+        dateField.minimumDate = NSDate() as Date
 
 //              let timeFormat = DateFormatter()
 //              let date = Date()
@@ -206,7 +210,13 @@ class InputViewController: UIViewController {
         let object = Session(name: titleField.text ?? "No name", date: date, time: time, description: descriptionField.text ?? "No description", duration: durationValue, image: imageString ?? "history", location: locationField.text ?? "No location")
         print(object)
         checkDuplicateSessions(object: object)
-//       NetworkManager.postSessions(object: object)
+        titleField.text = ""
+        descriptionField.text = ""
+        locationField.text = ""
+        durationField.text = ""
+        durationScroll.selectRow(0, inComponent: 0, animated: true)
+        dateField.date = NSDate() as Date
+        
     }
     
     @objc func chooseImage() {
