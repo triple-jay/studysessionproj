@@ -28,8 +28,12 @@ class SelectPictureViewController: UIViewController {
         let history = Image(image: "history")
         let comsci = Image(image: "comsci")
         let biology = Image(image: "bio")
-        
-        images = [math, history, comsci, biology]
+        let chem = Image(image: "chem")
+        let space = Image(image: "space")
+        let books = Image(image: "books")
+        let physics = Image(image: "physics")
+               
+        images = [math, history, comsci, biology, chem, space, books, physics]
                
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
